@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'lib-HorizontalBarChart',
+  selector: 'HorizontalBarChart',
   template: `
   <div [ngStyle]="{'margin-top': this.marginTop + 'px','margin-bottom': this.marginBottom + 'px'}">
   <div *ngIf="this.leftBarPercentage != 0 && this.rightBarPercentage != 0" class="char-container">

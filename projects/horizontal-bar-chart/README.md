@@ -1,24 +1,44 @@
-# HorizontalBarChart
+## Installation
+To install this package, run the following command in your terminal:
+npm install horizontal-bar-chart
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.0.
+## Usage
+Import the HorizontalBarChartModule in your module:
 
-## Code scaffolding
+        import { HorizontalBarChartModule } from 'horizontal-bar-chart';
+        //...
+        @NgModule({
+        imports: [
+            HorizontalBarChartModule,
+            // ...
+        ],
+        // ...
+        })
+        export class AppModule { }
 
-Run `ng generate component component-name --project HorizontalBarChart` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project HorizontalBarChart`.
-> Note: Don't forget to add `--project HorizontalBarChart` or else it will be added to the default project in your `angular.json` file. 
+Then, you can use the lib-HorizontalBarChart component in your template:
 
-## Build
+        <HorizontalBarChart
+            [leftBarPercentage]="50"
+            [rightBarPercentage]="30"
+            [leftBarText]="'Left Bar'"
+            [rightBarText]="'Right Bar'"
+            [leftBarBackgroundColor]="'#f19f13'"
+            [rightBarBackgroundColor]="'#eb3f43'"
+            [marginTop]="50"
+            [marginBottom]="50">
+        </HorizontalBarChart>
 
-Run `ng build HorizontalBarChart` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Publishing
+## Inputs
+        leftBarPercentage (number): The percentage value of the left bar.
+        rightBarPercentage (number): The percentage value of the right bar.
+        leftBarText (string): The text to display on the left legend.
+        rightBarText (string): The text to display on the right legend.
+        leftBarBackgroundColor (string): The background color of the left bar.
+        rightBarBackgroundColor (string): The background color of the right bar.
+        marginTop (number): The margin top value of the chart container.
+        marginBottom (number): The margin bottom value of the chart container.
 
-After building your library with `ng build HorizontalBarChart`, go to the dist folder `cd dist/horizontal-bar-chart` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test HorizontalBarChart` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+This package is under the MIT license.
