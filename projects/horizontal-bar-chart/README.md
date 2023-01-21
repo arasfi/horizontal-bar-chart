@@ -1,6 +1,6 @@
 ## Preview 
 
-![Preview Horizontal Bar Chart](https://i.imgur.com/zFhFX53.png)
+![Preview Horizontal Bar Chart](https://i.imgur.com/gFrOTHG.png)
 
 ## Installation
 To install this package, run the following command in your terminal:
