@@ -2,6 +2,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "HorizontalBarChart": [
+        "dist/horizontal-bar-chart/horizontal-bar-chart",
+        "dist/horizontal-bar-chart"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

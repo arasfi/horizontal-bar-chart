@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "HorizontalBarChart": {
+      "projectType": "library",
+      "root": "projects/horizontal-bar-chart",
+      "sourceRoot": "projects/horizontal-bar-chart/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/horizontal-bar-chart/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/horizontal-bar-chart/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/horizontal-bar-chart/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/horizontal-bar-chart/src/test.ts",
+            "tsConfig": "projects/horizontal-bar-chart/tsconfig.spec.json",
+            "karmaConfig": "projects/horizontal-bar-chart/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "HorizontalBarChart"
 }
