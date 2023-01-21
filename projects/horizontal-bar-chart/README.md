@@ -1,5 +1,6 @@
 ## Installation
 To install this package, run the following command in your terminal:
+        
         npm install horizontal-bar-chart
 
 ## Usage
