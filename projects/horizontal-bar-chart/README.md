@@ -1,6 +1,6 @@
 ## Installation
 To install this package, run the following command in your terminal:
-npm install horizontal-bar-chart
+        npm install horizontal-bar-chart
 
 ## Usage
 Import the HorizontalBarChartModule in your module:
@@ -16,11 +16,13 @@ Import the HorizontalBarChartModule in your module:
         })
         export class AppModule { }
 
-Then, you can use the lib-HorizontalBarChart component in your template:
+Then, you can use the HorizontalBarChart component in your template:
 
         <HorizontalBarChart
-            [leftBarPercentage]="50"
+            [leftBarPercentage]="70"
             [rightBarPercentage]="30"
+            [leftLegendColor]="'black'"
+            [rightLegendColor]="'black'"
             [leftBarText]="'Left Bar'"
             [rightBarText]="'Right Bar'"
             [leftBarBackgroundColor]="'#f19f13'"
@@ -39,6 +41,8 @@ Then, you can use the lib-HorizontalBarChart component in your template:
         rightBarBackgroundColor (string): The background color of the right bar.
         marginTop (number): The margin top value of the chart container.
         marginBottom (number): The margin bottom value of the chart container.
+        leftLegendColor (string) = The text color on the left legend;
+        rightLegendColor (string) = The text color on the right legend;
 
 ## License
 This package is under the MIT license.

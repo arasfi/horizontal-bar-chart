@@ -1,0 +1,139 @@
+#left-bar, #right-bar
+{
+  /* border: 3px solid #fff; */
+  height: 35px;
+  text-align: center;
+  color: white;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  line-height: 30px;
+}
+.char-container {
+  width: 95%;
+  margin: auto;
+}
+
+
+#left-bar-value {
+  visibility: hidden;
+}
+
+#right-bar-value {
+  visibility: hidden;
+}
+
+#left-bar {
+  background: #f19f13;
+  position: relative;
+  color: black !important;
+}
+
+#right-bar {
+  background: #eb3f43;
+  position: relative;
+}
+
+.line-left-bar {
+    position: absolute;
+    border: 1px solid #f19f13;
+    width: 40px;
+    top: 32px;
+    margin: auto;
+    left: 10px;
+    transform: rotateY(0deg) rotate(45deg);
+}
+
+
+.line-right-bar {
+    position: absolute;
+    border: 1px solid #eb3f43;
+    width: 30px;
+    top: -10px;
+    right: 10px;
+    margin: auto;
+    transform: rotateY(0deg) rotate(135deg);
+}
+
+.legend-left-bar {
+    position: absolute;
+    background: #f19f13;
+    color: black;
+    font-size: 0.8rem;
+    top: -30px;
+    /* left: 15px; */
+    padding: 4px;
+    margin: auto;
+    text-align: center;
+}
+
+.legend-right-bar {
+    font-size: 0.8rem;
+    position: absolute;
+    background: #eb3f43;
+    color: black;
+    top: 30px;
+    /* right: 15px; */
+    padding: 4px;
+    margin: auto;
+    text-align: center;
+}
+
+.barsContainer {
+    margin-top: 50px;
+}
+
+.leftSquare {
+    width: 20px;
+    height: 20px;
+    /* border: 1px solid #fff; */
+    display: inline-block;
+    background: #fda728;
+    margin-top: 5px;
+    vertical-align: bottom;
+}
+
+#containerChart {
+  font-family: tahoma;
+}
+
+.rightSquare
+{
+    width: 20px;
+    height: 20px;
+    /* border: 1px solid #fff; */
+    display: inline-block;
+    background: #eb3f43;
+    margin-top: 5px;
+    vertical-align: bottom;
+}
+
+.legendText {
+    color: white;
+    font-size: 0.8rem;
+    display: inline-block;
+    width: 50%;
+    font-family: tahoma;
+}
+
+/* keyframes for animation */
+@keyframes run {
+    to {
+      background-size:10000% 5px
+    }
+  }
+  @keyframes popup {
+    60% {
+      transform:scale(0.1);
+      opacity: 0;
+    }
+    100% {
+      transform:scale(1);
+      opacity:1;
+    }
+  }
+  /* call and delay animations */
+  .leftSquare, .rightSquare, #right-bar, #left-bar {
+    opacity: 0;
+    animation:popup 1s forwards;
+  }
