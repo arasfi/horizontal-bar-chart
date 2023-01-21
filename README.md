@@ -1,27 +1,44 @@
-# BarChart
+## Installation
+To install this package, run the following command in your terminal:
+npm install horizontal-bar-chart
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+## Usage
+Import the HorizontalBarChartModule in your module:
 
-## Development server
+        import { HorizontalBarChartModule } from 'horizontal-bar-chart';
+        //...
+        @NgModule({
+        imports: [
+            HorizontalBarChartModule,
+            // ...
+        ],
+        // ...
+        })
+        export class AppModule { }
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Then, you can use the lib-HorizontalBarChart component in your template:
 
-## Code scaffolding
+        <HorizontalBarChart
+            [leftBarPercentage]="50"
+            [rightBarPercentage]="30"
+            [leftBarText]="'Left Bar'"
+            [rightBarText]="'Right Bar'"
+            [leftBarBackgroundColor]="'#f19f13'"
+            [rightBarBackgroundColor]="'#eb3f43'"
+            [marginTop]="50"
+            [marginBottom]="50">
+        </HorizontalBarChart>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Inputs
+        leftBarPercentage (number): The percentage value of the left bar.
+        rightBarPercentage (number): The percentage value of the right bar.
+        leftBarText (string): The text to display on the left legend.
+        rightBarText (string): The text to display on the right legend.
+        leftBarBackgroundColor (string): The background color of the left bar.
+        rightBarBackgroundColor (string): The background color of the right bar.
+        marginTop (number): The margin top value of the chart container.
+        marginBottom (number): The margin bottom value of the chart container.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+This package is under the MIT license.

@@ -182,9 +182,9 @@ export class HorizontalBarChartComponent implements OnInit {
   @Input() rightBarPercentage: number = 0;
 
   @Input()
-  leftBarText!: String;
+  leftBarText: String = 'Loading...';
   @Input()
-  rightBarText!: String;
+  rightBarText: String = 'Loading...';
 
   @Input()
   leftBarBackgroundColor!: String;
@@ -207,16 +207,32 @@ export class HorizontalBarChartComponent implements OnInit {
   public rightLegendWidth = 100
 
 
-  public leftBarPecentageText = ''
-  public rightBarPecentageText = ''
+  public leftBarPecentageText = 'Loading...'
+  public rightBarPecentageText = 'Loading...'
 
   constructor() { }
 
   ngOnInit(): void {
-    this.leftBarPecentageText = 'Loading...'
-    this.rightBarPecentageText = 'Loading...'
-    this.leftBarText = 'Loading...'
-    this.rightBarText = 'Loading...'
+   
+    if ((isNaN(this.leftBarPercentage) || this.leftBarPercentage == 0) && (isNaN(this.rightBarPercentage) || this.rightBarPercentage == 0)) {
+      this.leftBarPecentageText = 'No data'
+      this.rightBarPecentageText = 'No data'
+      this.leftBarPercentage = 50;
+      this.rightBarPercentage = 50;
+    } else if ((isNaN(this.leftBarPercentage) || this.leftBarPercentage == 0) && (!isNaN(this.rightBarPercentage) && this.rightBarPercentage != 0)) {
+      this.leftBarPecentageText = ''
+      this.leftBarPercentage = -1
+      this.rightBarPercentage = 100
+      this.rightBarPecentageText = '100%'
+    } else if ((!isNaN(this.leftBarPercentage) && this.leftBarPercentage != 0) && (isNaN(this.rightBarPercentage) || this.rightBarPercentage == 0)) {
+      this.leftBarPecentageText = '100%'
+      this.leftBarPercentage = 100
+      this.rightBarPercentage = -1
+      this.rightBarPecentageText = ''
+    } else {
+      this.leftBarPecentageText = this.leftBarPercentage.toString() + '%'
+      this.rightBarPecentageText = this.rightBarPercentage.toString() + '%'
+    }
   }
 
   ngOnChanges() {
